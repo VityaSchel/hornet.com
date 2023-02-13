@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "out/index.js",
+  "types": "out/index.d.ts",
   "type": "module",
   "scripts": {
     "prebuild": "del out/",
@@ -12,6 +13,18 @@
   },
   "author": "Viktor Shchelochkov <hi@hloth.dev> (https://hloth.dev/)",
   "license": "MIT",
+  "files": [
+    "out/*",
+    "banner.png"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VityaSchel/hornet.com.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VityaSchel/hornet.com/issues"
+  },
+  "homepage": "https://github.com/VityaSchel/hornet.com#readme",
   "dependencies": {
     "dotenv": "^16.0.0",
     "node-fetch": "^3.3.0",
