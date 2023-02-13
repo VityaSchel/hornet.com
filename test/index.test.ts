@@ -17,7 +17,7 @@ it('gets profile', async () => {
 })
 
 it('deletes conversation', async () => {
-  const deletionStatus = await api.deleteConversation(39746110)
+  const deletionStatus = await api.deleteConversation(123456)
   console.log(deletionStatus)
   expect(deletionStatus).toBe(true)
 })

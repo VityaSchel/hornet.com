@@ -50,10 +50,18 @@ export default class HornetAPI {
     }
     const response = await request
     // DEBUG && console.log(response.status)
-    if(response.size > 0) {
-      const result = await response.json()
-      return result
-    } else {
+    try {
+      const text = await response.text()
+      try {
+        const json = JSON.parse(text)
+        return json
+      } catch(e) {
+        // DEBUG && console.warn('Unable to parse response as JSON', text)
+        if(text.length === 0) return null
+        else return text
+      }
+    } catch(e) {
+      DEBUG && console.warn('Unable to parse response as text')
       return null
     }
   }
@@ -79,6 +87,9 @@ export default class HornetAPI {
 
   async deleteConversation(profileId: number) {
     const response = await this.#request(`messages/${profileId}`, 'DELETE', null) as { member: HornetUser }
+    if(response !== null) {
+      throw new Error(`Couldn't delete Hornet conversation with id${profileId}. Error: ${response}`)
+    }
     return response === null
   }
 }
