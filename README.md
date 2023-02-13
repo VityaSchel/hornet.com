@@ -4,7 +4,7 @@ Unofficial browser API wrapper for queer social network [hornet.com](https://hor
 
 Written in TypeScript, tested with Jest.
 
-![Banner](./banner.png)
+![Logo](./logo.png)
 
 This project was made by some enthusiast who had 3 free hours in evening, please feel free to fork and maintain it, since I'm not really interested in continuing developing it. 
 
